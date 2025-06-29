@@ -12,10 +12,23 @@
         android:id="@+id/mantra_layout"
         layout="@layout/mantra_layout"/>
 
-    <ImageButton
-        android:id="@+id/login_fab"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/used_to_perform_login"
-        app:srcCompat="@drawable/ic_login_button" />
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <ImageButton
+            android:id="@+id/login_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:contentDescription="@string/used_to_perform_login"
+            app:srcCompat="@drawable/common_google_signin_btn_icon_dark_normal" />
+
+        <ImageButton
+            android:id="@+id/resetValues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_menu_delete" />
+    </LinearLayout>
 </LinearLayout>

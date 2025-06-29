@@ -23,7 +23,7 @@ public class CalculateRecite {
         calculateDB(ctx,textView.getTag().toString());
     }
     static void calculateDB(Context ctx,String tag){
-        try (SQLiteDatabase myDB = ctx.openOrCreateDatabase("mantras", MODE_PRIVATE, null)) {
+        try (SQLiteDatabase myDB = ctx.openOrCreateDatabase("mantras.db", MODE_PRIVATE, null)) {
             myDB.execSQL("Create table if not exists mantras (mantra_name varchar,times int);");
             Log.d("CalculateRecite", "Created | exists 'mantras' table");
 
