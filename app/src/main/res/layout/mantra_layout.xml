@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/mantra_layout"
+    android:gravity="top"
+    android:padding="16dp">
+    <!-- Mantra 1 -->
+
+    <Button
+        android:id="@+id/GayatriMantra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Gayatri Mantra" />
+
+    <TextView
+        android:id="@+id/tvTotal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Recited: 0"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Mantra 2 -->
+    <Button
+        android:id="@+id/btnMantra2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shri Raghavendra Mantra"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tvTotal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Recited: 0"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp" />
+</LinearLayout>
