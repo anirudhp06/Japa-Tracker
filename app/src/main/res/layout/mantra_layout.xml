@@ -16,7 +16,7 @@
         android:text="Gayatri Mantra" />
 
     <TextView
-        android:id="@+id/tvTotal1"
+        android:id="@+id/gayatri_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Total Recited: 0"
@@ -25,14 +25,14 @@
 
     <!-- Mantra 2 -->
     <Button
-        android:id="@+id/btnMantra2"
+        android:id="@+id/RaghavendraMantra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Shri Raghavendra Mantra"
         android:layout_marginBottom="8dp" />
 
     <TextView
-        android:id="@+id/tvTotal2"
+        android:id="@+id/raghavendra_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Total Recited: 0"
