@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "152303669688",
+    "firebase_url": "https://japa-tracker-15993-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "japa-tracker-15993",
+    "storage_bucket": "japa-tracker-15993.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152303669688:android:c5fedd62e8ec2103fcbf4d",
+        "android_client_info": {
+          "package_name": "com.anirudh.japatracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152303669688-nekc2nf7do95mnlf320fj9hsjk18n8ii.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anirudh.japatracker",
+            "certificate_hash": "d4425f9409cb0dee298f4974409962ed6945ea70"
+          }
+        },
+        {
+          "client_id": "152303669688-hgl6dbqdkd4dkqepv415ovjpboa9kv45.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2bwh1IoODc7q5kv7mIIklvNytf00Gp6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152303669688-hgl6dbqdkd4dkqepv415ovjpboa9kv45.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
