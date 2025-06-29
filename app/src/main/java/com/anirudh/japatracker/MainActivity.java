@@ -2,6 +2,10 @@ package com.anirudh.japatracker;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -10,6 +14,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import android.util.Log;
 import android.view.View;
 
 import android.widget.Button;
@@ -27,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //Login Button
         login=(ImageButton) findViewById(R.id.login_fab);
 
@@ -48,18 +52,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        gayatri_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CalculateRecite.count(gayatri_text);
+        try(SQLiteDatabase myDB = openOrCreateDatabase("mantras", Context.MODE_PRIVATE, null)){
+            myDB.execSQL("Create table if not exists mantras (mantra_name varchar,times int);");
+
+            Cursor cur=myDB.rawQuery("select * from mantras where name=? or name=?",new String[]{gayatri_text.getTag().toString(),raghavendra_text.getTag().toString()});
+            int counter=0;
+            while(cur.moveToNext()){
+                String name=cur.getString(0);
+                int times=cur.getInt(1);
+
+                if (name.equals(gayatri_text.getTag().toString())) {
+                    gayatri_text.setText(String.format(Locale.ENGLISH,"Total Recited: %d",times));
+                } else if (name.equals(raghavendra_text.getTag().toString())) {
+                    raghavendra_text.setText(String.format(Locale.ENGLISH,"Total Recited: %d",times));
+                }
             }
-        });
-        raghavendra_buton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CalculateRecite.count(raghavendra_text);
-            }
-        });
+            cur.close();
+        }
+        catch (SQLException e){
+            Log.d("MainActivity",e.toString());
+        }
+
+        gayatri_button.setOnClickListener(v->CalculateRecite.count(this,gayatri_text));
+        raghavendra_buton.setOnClickListener(v->CalculateRecite.count(this,raghavendra_text));
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             // Android 13+
             ActivityCompat.requestPermissions(this, new String[]{

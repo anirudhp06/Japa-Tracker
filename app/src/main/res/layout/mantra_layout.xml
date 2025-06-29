@@ -19,6 +19,7 @@
         android:id="@+id/gayatri_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:tag="Gayatri"
         android:text="Total Recited: 0"
         android:textSize="16sp"
         android:layout_marginBottom="24dp" />
@@ -35,6 +36,7 @@
         android:id="@+id/raghavendra_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:tag="Raghavendra"
         android:text="Total Recited: 0"
         android:textSize="16sp"
         android:layout_marginBottom="24dp" />
